@@ -16,6 +16,37 @@
 	<script src="js/modernizr-2.6.2.min.js"></script>
 
 
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+	  google.charts.load("current", {packages:['corechart']});
+	  google.charts.setOnLoadCallback(drawChart);
+	  function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+		  ["Element", "가동률(%)", { role: "style" } ],
+		  ["html", 100, "#b87333"],
+		  ["js", 50, "silver"],
+		  ["node.js", 60, "gold"],
+		]);
+  
+		var view = new google.visualization.DataView(data);
+		view.setColumns([0, 1,
+						 { calc: "stringify",
+						   sourceColumn: 1,
+						   type: "string",
+						   role: "annotation" },
+						 2]);
+  
+		var options = {
+		  title: "사용가능한 언어(가동율 %)",
+		  width: 600,
+		  height: 400,
+		  bar: {groupWidth: "95%"},
+		  legend: { position: "none" },
+		};
+		var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+		chart.draw(view, options);
+	}
+	</script>
 	</head>
 	<body>
 	<div id="fh5co-page">
@@ -38,7 +69,7 @@
 			<div class="fh5co-narrow-content">
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<img class="img-responsive" src="images/03.png" >
+						<img class="img-responsive" src="images/03.png" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 					</div>
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 						<h2 class="fh5co-heading">웹통신위원회</h2>
@@ -50,7 +81,7 @@
 			<div class="fh5co-narrow-content">
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<img class="img-responsive" src="images/bg7.png" >
+						<div id="columnchart_values" style="width: auto; height: 300px;"></div>
 					</div>
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 						<h2 class="fh5co-heading">사용가능한 언어</h2>
