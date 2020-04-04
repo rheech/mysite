@@ -25,6 +25,10 @@ body {
   }
 }
 
+.doc-search-form .form-control {
+  width: 160px;
+}
+
 a {
   color: #228896;
   -webkit-transition: 0.5s;
