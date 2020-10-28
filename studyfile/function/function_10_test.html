@@ -11,7 +11,7 @@
             str +="이름:"+this.userName+",";
             str += "키: "+this.userHight+",";
             str +="몸무게: "+this.userWeight+"<br>";
-            return srt;
+            return str;
         }
         this.getResult = function(){
             this.minWeight = (this.userHight-100)*0.9-5;
@@ -34,5 +34,7 @@
     console.log(park);
 
     document.write(jang.getinfo());
-    document.write(jang.getResult());
+    document.write(jang.getResult(), "<br>");
+
+    document.write(jang.getResult === park.getResult);
 </script>

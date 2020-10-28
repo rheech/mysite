@@ -1,0 +1,24 @@
+<script>
+    function TestScore(name, kor, eng){
+        this.userName = name;
+        this.korNum = kor;
+        this.engNum = eng;
+
+        this.getTestinfo = function(){
+            document.write("이름"+ name ,"<br>")
+            document.write("국어"+ kor ,"<br>")
+            document.write("국어"+ eng ,"<br>")
+        }
+        this.getAvg = function(){
+            return(kor+eng)/2;
+        }
+    }
+    var kimgun = new TestScore("김군", 80,90);
+    var ohgun = new TestScore("오군", 100,80);
+
+    kimgun.getTestinfo();
+    document.write("평균 점수"+ kimgun.getAvg(), "<br><br>");
+
+    ohgun.getTestinfo();
+    document.write("평균 점수"+ ohgun.getAvg(), "<br><br>");
+</script>
