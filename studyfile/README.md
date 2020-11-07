@@ -20,5 +20,5 @@
 12. 반응형 웹 UI
 
 
-책:DO IT 자바스크립트&제리쿼리
+# 책:DO IT 자바스크립트&제리쿼리
 <image src="http://image.bandinlunis.com/upload/product/4164/4164107.jpg">
